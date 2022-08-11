@@ -1,0 +1,125 @@
+:root {
+  --clr-primary-400: hsl(158, 36%, 37%); /* Text & Button */
+  --clr-primary-350: hsl(158, 36%, 25%); /* Text & Button */
+  --clr-primary-300: hsl(30, 38%, 92%); /* Main BG */
+  --clr-primary-100: hsl(0, 0%, 100%); /* Card BG */
+
+  --clr-neutral-800: hsl(228, 12%, 48%); /* Paragraph */
+  --clr-neutral-900: hsl(212, 21%, 14%); /* Header */
+
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Fraunces', serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-secondary);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  /* Font size does not change between mobile/desktop */
+  --fs-500: 2rem;
+  --fs-400: 1rem;
+
+  --fs-heading: var(--fs-500);
+  --fs-paragraph: var(--fs-400);
+}
+
+/* Utility Classes */
+.text-primary-100 {color: var(--clr-primary-100);}
+.text-primary-400 {color: var(--clr-primary-400);}
+.text-primary-900 {color: var(--clr-neutral-900);}
+.text-paragraph-800 {color: var(--clr-neutral-800);}
+.btn-primary-400 {background-color: var(--clr-primary-400);}
+
+.bg-primary-300 {background-color: var(--clr-primary-300);}
+.bg-primary-100 {background-color: var(--clr-primary-100);}
+
+.fw-regular {font-weight: var(--fw-regular);}
+.fw-bold {font-weight: var(--fw-bold);}
+
+.fs-primary-heading {font-size: var(--fs-heading);}
+.fs-primary-paragraph {font-size: var(--fs-paragraph);}
+
+.button {
+  border-radius: 10px;
+  margin: auto;
+  width: 100%;
+  padding: 1rem 0;
+}
+.button:hover {
+  background-color: var(--clr-primary-350);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  border-radius: 10px;
+}
+
+/* General Styling */
+* {
+  /* outline: 1px solid green !important; */
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--ff-body);
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.secondary-header {
+  font-family: var(--ff-heading);
+}
+
+.price {
+  font-family: var(--ff-heading);
+}
+.price h2 {
+  text-decoration: line-through;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.card-image {
+  content: url("./images/image-product-mobile.jpg");
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (min-width: 375px) {
+  .card-image {
+    content: url("./images/image-product-desktop.jpg");
+    object-fit: contain;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 20rem);
+  }
+}
+
